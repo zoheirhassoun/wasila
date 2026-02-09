@@ -1,0 +1,88 @@
+.flights-page {
+  padding: 1.25rem 1rem 2rem;
+}
+
+.flights-page .page-title {
+  padding-top: 0.25rem;
+}
+
+.flights-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+.flights-form input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.flights-form input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.flights-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.flight-card {
+  padding: 1.25rem;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
+}
+
+.flight-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.flight-card__route {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.flight-card__meta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.875rem;
+}
+
+.flight-card__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.flight-card__price .btn {
+  padding: 0.5rem 1rem;
+}
+
+.flights-result.success {
+  padding: 1.25rem;
+  background: var(--color-primary-light);
+  border-radius: var(--radius);
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  border: 1px solid var(--color-primary);
+}

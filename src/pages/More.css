@@ -1,0 +1,38 @@
+.more-page {
+  padding: 1.25rem 1rem 2rem;
+}
+
+.more-page .page-title {
+  padding-top: 0.25rem;
+}
+
+.more-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 1.75rem;
+}
+
+.more-links a {
+  display: block;
+  padding: 1rem 1.25rem;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  font-weight: 600;
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.more-links a:hover {
+  background: var(--color-bg);
+  box-shadow: var(--shadow);
+  border-color: var(--color-primary-light);
+}
+
+.more-about {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}

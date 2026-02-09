@@ -1,0 +1,118 @@
+.home {
+  padding: 0 1rem 2rem;
+  min-height: 100%;
+}
+
+.home__header {
+  padding: 1.5rem 0 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.home__title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.home__subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+.home__services {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+  padding: 1.125rem 1.25rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+.service-card__icon {
+  font-size: 2.25rem;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, rgba(13, 148, 136, 0.15) 100%);
+  border-radius: var(--radius);
+  transition: transform var(--transition);
+}
+
+.service-card:hover .service-card__icon {
+  transform: scale(1.05);
+}
+
+.service-card__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.service-card__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.service-card__desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.service-card__arrow {
+  color: var(--color-primary);
+  font-size: 1.35rem;
+  opacity: 0.9;
+  transition: transform var(--transition);
+}
+
+.service-card:hover .service-card__arrow {
+  transform: translateX(4px);
+}
+
+.home__partner {
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.partner-cta {
+  display: block;
+  text-align: center;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.partner-cta:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}

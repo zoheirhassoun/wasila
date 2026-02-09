@@ -1,0 +1,68 @@
+.api-docs {
+  padding: 1.5rem 1rem 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.api-docs .page-title {
+  margin-bottom: 0.75rem;
+}
+
+.api-docs-intro {
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
+}
+
+.api-docs-section {
+  margin-bottom: 1.75rem;
+}
+
+.api-docs-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.625rem;
+  color: var(--color-text);
+}
+
+.api-docs-section pre {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+}
+
+.api-docs-section code {
+  background: var(--color-bg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.api-docs-section ul {
+  list-style: none;
+}
+
+.api-docs-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.api-docs-section li:last-child {
+  border-bottom: none;
+}
+
+.api-docs-footer {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.api-docs-footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+}

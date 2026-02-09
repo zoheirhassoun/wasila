@@ -1,0 +1,74 @@
+.partner-page {
+  padding: 1.5rem 1rem 2rem;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.partner-page .page-title {
+  margin-bottom: 1.25rem;
+}
+
+.partner-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 600;
+  margin-bottom: 1.125rem;
+  color: var(--color-text);
+}
+
+.partner-form input,
+.partner-form select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.partner-form input:focus,
+.partner-form select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.partner-check {
+  flex-direction: row !important;
+  align-items: center;
+}
+
+.partner-check input {
+  width: auto;
+  margin-left: 0.5rem;
+}
+
+.partner-footer {
+  margin-top: 1.75rem;
+  font-size: 0.95rem;
+}
+
+.partner-footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.partner-done {
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+.partner-done h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.partner-done p {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.partner-done .btn {
+  padding: 0.75rem 1.5rem;
+}
