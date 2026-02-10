@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-import HomeIcon from "./icons/HomeIcon";
 import "./TopBar.css";
 
 export default function TopBar() {
@@ -9,17 +8,25 @@ export default function TopBar() {
 
   return (
     <header className="top-bar">
-      <Link to="/" className="top-bar__brand">
-        <span className="top-bar__home-icon" aria-hidden="true">
-          <HomeIcon size={26} />
-        </span>
-        <span className="top-bar__title">وسيلة</span>
-      </Link>
       <Link to="/cart" className="top-bar__cart" aria-label="السلة">
         <span className="top-bar__cart-icon">🛒</span>
         {count > 0 && (
           <span className="top-bar__cart-badge" aria-hidden="true">{count > 99 ? "99+" : count}</span>
         )}
+      </Link>
+      <div className="top-bar__search-wrap">
+        <input
+          type="search"
+          className="top-bar__search"
+          placeholder="بحث وسيلة"
+          aria-label="بحث"
+          readOnly
+          onFocus={(e) => e.target.blur()}
+        />
+      </div>
+      <Link to="/" className="top-bar__brand" aria-label="وسيلة">
+        <span className="top-bar__logo-icon" aria-hidden="true">★</span>
+        <span className="top-bar__title">وسيلة</span>
       </Link>
     </header>
   );

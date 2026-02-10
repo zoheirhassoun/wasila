@@ -26,8 +26,9 @@ export default function Stores() {
         {stores.length === 0 ? (
           <p className="empty-state">لا توجد متاجر حالياً.</p>
         ) : (
-          stores.map((s) => (
+          stores.map((s, i) => (
             <Link key={s.id} to={`/stores/${s.id}`} className="store-card">
+              {i === 0 && <span className="store-card__badge">عرض خاص</span>}
               <div className="store-card__img">
                 {s.logoUrl ? <img src={s.logoUrl} alt="" /> : <span>🛒</span>}
               </div>

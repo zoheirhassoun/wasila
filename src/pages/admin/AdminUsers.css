@@ -1,0 +1,54 @@
+.admin-users__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.admin-users__table-wrap {
+  overflow-x: auto;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.admin-users__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.admin-users__table th,
+.admin-users__table td {
+  padding: 0.75rem 1rem;
+  text-align: right;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-users__table th {
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+}
+
+.admin-users__table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-users__role {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.admin-users__role--user {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.admin-users__role--admin {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
