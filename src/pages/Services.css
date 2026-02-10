@@ -1,0 +1,28 @@
+.services-page {
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+}
+
+.services-page__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+
+.services-page__soon {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.services-page__back {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.services-page__back:hover {
+  text-decoration: underline;
+}

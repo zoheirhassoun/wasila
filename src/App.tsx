@@ -12,6 +12,8 @@ import More from "./pages/More";
 import Partner from "./pages/Partner";
 import PartnerDashboard from "./pages/PartnerDashboard";
 import PartnerApiDocs from "./pages/PartnerApiDocs";
+import Services from "./pages/Services";
+import ServicesList from "./pages/ServicesList";
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
         <Route path="restaurants" element={<Restaurants />} />
         <Route path="restaurants/:id" element={<RestaurantDetail />} />
         <Route path="flights" element={<Flights />} />
+        <Route path="services" element={<ServicesList />} />
+        <Route path="services/:id" element={<Services />} />
         <Route path="more" element={<More />} />
       </Route>
       <Route path="/partner" element={<Partner />} />

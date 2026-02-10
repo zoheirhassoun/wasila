@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-const services = [
+const mainServices = [
   { to: "/stores", title: "متاجر", desc: "تسوق من متاجر وسيلة والشركاء", icon: "🛒" },
   { to: "/rides", title: "توصيل ركاب", desc: "احجز رحلة بسرعة وأمان", icon: "🚗" },
   { to: "/restaurants", title: "توصيل مطاعم", desc: "اطلب من مطاعمك المفضلة", icon: "🍽" },
-  { to: "/flights", title: "حجوزات طيران", desc: "ابحث واحجز رحلاتك", icon: "✈" },
+  { to: "/flights", title: "حجوزات طيران وفنادق", desc: "ابحث واحجز رحلاتك وفنادقك", icon: "✈" },
+  { to: "/services", title: "الخدمات", desc: "خدمات النظافة والصيدلية والسيارات وغيرها", icon: "📋" },
 ];
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
         <p className="home__subtitle">كل ما تحتاجه في تطبيق واحد</p>
       </header>
       <section className="home__services">
-        {services.map((s) => (
+        {mainServices.map((s) => (
           <Link key={s.to} to={s.to} className="service-card">
             <span className="service-card__icon">{s.icon}</span>
             <div className="service-card__text">

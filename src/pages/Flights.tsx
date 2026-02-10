@@ -3,7 +3,10 @@ import { searchFlights, bookFlight } from "../api/flights";
 import type { Flight } from "../types";
 import "./Flights.css";
 
+type BookingType = "flights" | "hotels";
+
 export default function Flights() {
+  const [type, setType] = useState<BookingType>("flights");
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [date, setDate] = useState("");
@@ -42,65 +45,89 @@ export default function Flights() {
 
   return (
     <div className="flights-page">
-      <h1 className="page-title">حجوزات طيران</h1>
-      <form className="flights-form" onSubmit={handleSearch}>
-        <input
-          type="text"
-          value={from}
-          onChange={(e) => setFrom(e.target.value)}
-          placeholder="من"
-          required
-        />
-        <input
-          type="text"
-          value={to}
-          onChange={(e) => setTo(e.target.value)}
-          placeholder="إلى"
-          required
-        />
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          required
-        />
-        <button type="submit" className="btn btn--primary" disabled={loading}>
-          {loading ? "جاري البحث..." : "بحث"}
+      <h1 className="page-title">حجوزات الطيران والفنادق</h1>
+      <div className="bookings-tabs">
+        <button
+          type="button"
+          className={`bookings-tab ${type === "flights" ? "bookings-tab--active" : ""}`}
+          onClick={() => setType("flights")}
+        >
+          ✈ حجوزات طيران
         </button>
-      </form>
-      {error && <p className="form-error">{error}</p>}
-      {bookingId && (
-        <div className="flights-result success">
-          تم الحجز بنجاح. رقم الحجز: {bookingId}
+        <button
+          type="button"
+          className={`bookings-tab ${type === "hotels" ? "bookings-tab--active" : ""}`}
+          onClick={() => setType("hotels")}
+        >
+          🏨 حجوزات فنادق
+        </button>
+      </div>
+      {type === "hotels" ? (
+        <div className="bookings-soon">
+          <p>حجوزات الفنادق ستكون متاحة قريباً</p>
         </div>
-      )}
-      {flights.length > 0 && (
-        <ul className="flights-list">
-          {flights.map((f) => (
-            <li key={f.id} className="flight-card">
-              <div className="flight-card__route">
-                <span>{f.from}</span>
-                <span>→</span>
-                <span>{f.to}</span>
-              </div>
-              <div className="flight-card__meta">
-                <span>{f.date} {f.time}</span>
-                <span>{f.airline}</span>
-              </div>
-              <div className="flight-card__price">
-                {f.price} ر.س
-                <button
-                  type="button"
-                  className="btn btn--primary"
-                  onClick={() => handleBook(f.id)}
-                  disabled={loading}
-                >
-                  احجز
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
+      ) : (
+        <>
+          <form className="flights-form" onSubmit={handleSearch}>
+            <input
+              type="text"
+              value={from}
+              onChange={(e) => setFrom(e.target.value)}
+              placeholder="من"
+              required
+            />
+            <input
+              type="text"
+              value={to}
+              onChange={(e) => setTo(e.target.value)}
+              placeholder="إلى"
+              required
+            />
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              required
+            />
+            <button type="submit" className="btn btn--primary" disabled={loading}>
+              {loading ? "جاري البحث..." : "بحث"}
+            </button>
+          </form>
+          {error && <p className="form-error">{error}</p>}
+          {bookingId && (
+            <div className="flights-result success">
+              تم الحجز بنجاح. رقم الحجز: {bookingId}
+            </div>
+          )}
+          {flights.length > 0 && (
+            <ul className="flights-list">
+              {flights.map((f) => (
+                <li key={f.id} className="flight-card">
+                  <div className="flight-card__route">
+                    <span>{f.from}</span>
+                    <span>→</span>
+                    <span>{f.to}</span>
+                  </div>
+                  <div className="flight-card__meta">
+                    <span>{f.date} {f.time}</span>
+                    <span>{f.airline}</span>
+                  </div>
+                  <div className="flight-card__price">
+                    {f.price} ر.س
+                    <button
+                      type="button"
+                      className="btn btn--primary"
+                      onClick={() => handleBook(f.id)}
+                      disabled={loading}
+                    >
+                      احجز
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </>
       )}
     </div>
   );
